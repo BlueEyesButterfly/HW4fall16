@@ -10,4 +10,6 @@
   = text_field :session, 'email', :id => 'login_email'
   
   =button_to 'Login to My Account', login_create_path, :method=>:post,:id=> 'login_submit'
+  %p
+  
   =link_to 'Sign-up for an account', new_user_path, :id=>'signup'
