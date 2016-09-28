@@ -10,11 +10,12 @@ class SessionsController < ApplicationController
     if user && (user.email==params[:session][:email])
       session[:session_token]=user.session_token
       set_current_user
-      session[:notice] = "You are login as #{user.user_id}."
+      session[:notice] = "You are logged in as #{user.user_id}."
       redirect_to movies_path
       # Log the user in and redirect to the user's show page.
     else
       # Create an error message.
+     
       flash[:notice] = "Invalid user-id/email combination."
       redirect_to login_path
     end

@@ -5,6 +5,6 @@ class User < ActiveRecord::Base
     def self.create_user!(params_has)
         randomString=SecureRandom.base64(15)
         params_has[:session_token]=randomString
-        new(params_has)
+        create(params_has)
     end 
 end
